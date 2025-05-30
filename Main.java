@@ -2,36 +2,25 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        // Criação do objeto Scanner para ler a entrada do usuário
         Scanner scanner = new Scanner(System.in);
 
-        // Declaração das variáveis
-        double[] notas = new double[8];
-        double media1Bimestre, media2Bimestre, media1Semestre, media2Semestre, mediaFinal;
+        // Solicita ao usuário que insira a temperatura em Celsius
+        System.out.print("Digite a temperatura em Celsius: ");
+        double celsius = scanner.nextDouble();
 
-        // Entrada das notas
-        System.out.println("Digite as 8 notas anuais do aluno:");
+        // Calcula a temperatura em Fahrenheit
+        double fahrenheit = (celsius * 9/5) + 32;
 
-        for (int i = 0; i < 8; i++) {
-            System.out.print("Nota " + (i + 1) + ": ");
-            notas[i] = scanner.nextDouble();
-        }
+        // Calcula a temperatura em Kelvin
+        double kelvin = celsius + 273.15;
 
-        // Cálculo das médias
-        media1Bimestre = (notas[0] + notas[1]) / 2;
-        media2Bimestre = (notas[2] + notas[3]) / 2;
-        media1Semestre = (media1Bimestre + media2Bimestre) / 2;
-        media2Bimestre = (notas[4] + notas[5]) / 2;
-        media2Semestre = (media2Bimestre + media2Bimestre) / 2;
-        mediaFinal = (media1Semestre + media2Semestre) / 2;
+        // Exibe os resultados
+        System.out.println("\nTemperatura em Celsius: " + celsius + " °C");
+        System.out.println("Temperatura em Fahrenheit: " + fahrenheit + " °F");
+        System.out.println("Temperatura em Kelvin: " + kelvin + " K");
 
-        // Saída dos resultados
-        System.out.println("\nResultados:");
-        System.out.println("1º Bimestre: " + media1Bimestre);
-        System.out.println("2º Bimestre: " + media2Bimestre);
-        System.out.println("1º Semestre: " + media1Semestre);
-        System.out.println("2º Semestre: " + media2Semestre);
-        System.out.println("Média Final: " + mediaFinal);
-
+        // Fecha o scanner
         scanner.close();
     }
 }
